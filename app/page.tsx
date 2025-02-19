@@ -1,6 +1,15 @@
-export default function Home() {
+import Link from "next/link";
+
+export default async function Page() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
+    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)] bg-white">
+      <nav>
+        <ul className="flex justify-center gap-4">
+          <li className="text-lg font-bold text-black hover:underline">
+            <Link href="/insert">Insert</Link>
+          </li>
+        </ul>
+      </nav>
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
         <img className="dark:invert" src="/next.svg" width={180} height={38} />
 
@@ -23,7 +32,7 @@ export default function Home() {
             Test button
           </button>
         </div>
-        <footer className="grid grid-cols-2 gap-4">
+        {/* <footer className="grid grid-cols-2 gap-4">
           <button className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5">
             Test button 2
           </button>
@@ -36,7 +45,7 @@ export default function Home() {
           <button className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5">
             Test button 5
           </button>
-        </footer>
+        </footer> */}
         <div className="grid grid-cols-3">
           <img
             src={

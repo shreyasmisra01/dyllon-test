@@ -1,3 +1,6 @@
+/* eslint-disable jsx-a11y/role-supports-aria-props */
+/* eslint-disable @next/next/no-img-element */
+/* eslint-disable jsx-a11y/alt-text */
 import Link from "next/link";
 
 export default async function Page() {
@@ -14,10 +17,11 @@ export default async function Page() {
         <img className="dark:invert" src="/next.svg" width={180} height={38} />
 
         <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
+          <button
+            role="none"
+            aria-hidden="true"
+            style={{ all: "unset" }}
             className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
             rel="noopener noreferrer"
           >
             <img
@@ -27,8 +31,12 @@ export default async function Page() {
               height={20}
             />
             Deploy now
-          </a>
-          <button className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5">
+          </button>
+          <button
+            role="none"
+            aria-hidden="true"
+            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
+          >
             Test button
           </button>
         </div>

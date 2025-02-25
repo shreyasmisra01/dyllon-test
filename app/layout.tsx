@@ -53,7 +53,7 @@ export default async function RootLayout({
     // Handle the case where the script data is not available
     console.log("Script data not available or error occurred.");
     return (
-      <html lang="en">
+      <html lang="en" suppressHydrationWarning>
         <body
           className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         >

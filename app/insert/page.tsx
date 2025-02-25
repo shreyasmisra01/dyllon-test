@@ -7,6 +7,7 @@ import {
   writeFileAction,
 } from "../actions/serverAction";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 const Insert = () => {
   const [files, setFiles] = useState<string[]>([]);
@@ -41,44 +42,59 @@ const Insert = () => {
     }
   };
   return (
-    <form onSubmit={handleSubmit}>
-      <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)] bg-white">
-        <div className="flex justify-center items-center space-x-4">
-          <label htmlFor="" className="text-black text-2xl">
-            Insert Script url
-          </label>
-          <input
-            name="myInput"
-            className="text-black w-[500px] border border-black p-3 rounded-lg"
-            type="url"
-          />
-          <button
-            type="submit"
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-          >
-            Submit
-          </button>
+    <>
+      <form onSubmit={handleSubmit}>
+        <div className="text-center p-2">
+          <Link className="text-2xl  font-bold " href={"/"}>
+            Go to Homepage
+          </Link>
         </div>
-        <div className="text-black">
-          <h2 className="text-xl font-bold">Files</h2>
-          <ul>
-            {files.map((file) => (
-              <div key={file}>
-                <li className="flex space-x-8 items-center">
-                  <span className="bg-blue-200 p-2 rounded-xl">{file}</span>
-                  <button
-                    className="border border-black p-2 rounded-xl"
-                    onClick={() => deleteFile(file)}
-                  >
-                    Delete
-                  </button>
-                </li>
-              </div>
-            ))}
-          </ul>
+        <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)] bg-white">
+          <div className="space-y-3">
+            <div className="flex justify-center items-center space-x-4">
+              <label htmlFor="" className="text-black text-2xl">
+                Insert Script url
+              </label>
+              <input
+                name="myInput"
+                className="text-black w-[500px] border border-black p-3 rounded-lg"
+                type="url"
+              />
+              <button
+                type="submit"
+                className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
+              >
+                Submit
+              </button>
+            </div>
+            <div className="gap-2 flex text-black">
+              <p>Url example:</p>
+              <span className="font-bold underline">
+                https://wscan.dealopia.com/api/static?fileName=dyllontestnew1&lastScannedDate=20250221
+              </span>
+            </div>
+          </div>
+          <div className="text-black">
+            <h2 className="text-xl font-bold">Files</h2>
+            <ul>
+              {files.map((file) => (
+                <div key={file}>
+                  <li className="flex space-x-8 items-center">
+                    <span className="bg-blue-200 p-2 rounded-xl">{file}</span>
+                    <button
+                      className="border border-black p-2 rounded-xl"
+                      onClick={() => deleteFile(file)}
+                    >
+                      Delete
+                    </button>
+                  </li>
+                </div>
+              ))}
+            </ul>
+          </div>
         </div>
-      </div>
-    </form>
+      </form>
+    </>
   );
 };
 

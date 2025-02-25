@@ -3,7 +3,7 @@
 import fs from "fs/promises";
 import path from "path";
 
-const BASE_PATH = "/var/www/canBeDeletetedLater/dyllon-test/public";
+const BASE_PATH = process.env.BASEURL;
 export async function writeFileAction(data: string, filename: string) {
   try {
     // Sanitize filename to prevent directory traversal attacks
@@ -35,11 +35,21 @@ export async function readFileAction(filename: string) {
     const sanitizedFilename = filename.replace(/[^a-zA-Z0-9._-]/g, "_");
     const filePath = path.join(BASE_PATH, `${sanitizedFilename}.txt`);
 
+    try {
+      await fs.access(filePath, fs.constants.F_OK); // Check if the file exists
+    } catch (accessError: string) {
+      if (accessError.code === "ENOENT") {
+        console.log(`File "${filename}" does not exist.`);
+        return { success: false, message: "File does not exist", data: null };
+      }
+      // throw accessError; // Re-throw if it's a different error
+    }
+
     const data = await fs.readFile(filePath, "utf-8");
     return { success: true, data: data };
   } catch (error) {
     console.error(`Error reading file "${filename}":`, error);
-    return { success: false, data: null };
+    return { success: false, message: "Error reading file", data: null };
   }
 }
 export async function deleteFileAction(filename: string) {

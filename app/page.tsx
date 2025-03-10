@@ -12,6 +12,9 @@ import MissingRoleText from "./components/MissingRoleText";
 import TreeItemWithoutName from "./components/TreeItemWithoutAriaName";
 import IframeWithoutTestingScript from "./components/IframeWithoutTestingScript";
 import TabIndexError from "./components/TabIndexError";
+import ObjectWithoutAlt from "./components/ObjectWithoutAlt";
+import AreaWithoutAlt from "./components/AreaWithoutAlt";
+import AriaCommandName from "./components/AriaCommandName";
 
 export default async function Page() {
   return (
@@ -34,6 +37,9 @@ export default async function Page() {
         <TreeItemWithoutName />
         <IframeWithoutTestingScript />
         <TabIndexError />
+        <ObjectWithoutAlt />
+        <AreaWithoutAlt />
+        <AriaCommandName />
       </main>
     </div>
   );

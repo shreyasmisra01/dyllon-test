@@ -15,6 +15,9 @@ import TabIndexError from "./components/TabIndexError";
 import ObjectWithoutAlt from "./components/ObjectWithoutAlt";
 import AreaWithoutAlt from "./components/AreaWithoutAlt";
 import AriaCommandName from "./components/AriaCommandName";
+import AriaInputFieldNameError from "./components/AriaInputFieldNameError";
+import AriaHiddenFocusError from "./components/AriaHiddenFocusError";
+import AriaMeterNameError from "./components/AriaMeterNameError";
 
 export default async function Page() {
   return (
@@ -40,6 +43,9 @@ export default async function Page() {
         <ObjectWithoutAlt />
         <AreaWithoutAlt />
         <AriaCommandName />
+        <AriaHiddenFocusError />
+        <AriaInputFieldNameError />
+        <AriaMeterNameError />
       </main>
     </div>
   );

@@ -37,9 +37,9 @@ export default async function RootLayout({
     typeof readResult?.data === "string" &&
     readResult?.data
   ) {
-    console.log(readResult?.data);
+    console.log("readResult?.data", readResult?.data);
     return (
-      <html>
+      <html suppressHydrationWarning>
         <head>
           <script src={readResult?.data} async></script>
         </head>

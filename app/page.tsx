@@ -18,6 +18,17 @@ import AriaCommandName from "./components/AriaCommandName";
 import AriaInputFieldNameError from "./components/AriaInputFieldNameError";
 import AriaHiddenFocusError from "./components/AriaHiddenFocusError";
 import AriaMeterNameError from "./components/AriaMeterNameError";
+import ProgressBar from "./components/ProgressBar";
+import AriaRequiredAttr from "./components/AriaRequiredAttr";
+import AriaRequiredChildren from "./components/AriaRequiredChildren";
+import AriaRequiredParent from "./components/AriaRequiredParent";
+import AriaRoles from "./components/AriaRoles";
+import AriaToggleFieldName from "./components/AriaToggleFieldName";
+import AriaTooltipName from "./components/AriaTooltipName";
+import AriaValidAttrValue from "./components/AriaValidAttrValue";
+import SelectName from "./components/SelectName";
+import AriaValidAttr from "./components/AriaValidAttr";
+import Bypass from "./components/Bypass";
 
 export default async function Page() {
   return (
@@ -46,6 +57,17 @@ export default async function Page() {
         <AriaHiddenFocusError />
         <AriaInputFieldNameError />
         <AriaMeterNameError />
+        <ProgressBar />
+        <AriaRequiredAttr />
+        <AriaRequiredChildren />
+        <AriaRequiredParent />
+        <AriaRoles />
+        <AriaToggleFieldName />
+        <AriaTooltipName />
+        <AriaValidAttrValue />
+        <SelectName />
+        <AriaValidAttr />
+        <Bypass />
       </main>
     </div>
   );

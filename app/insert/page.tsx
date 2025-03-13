@@ -44,7 +44,8 @@ const Insert = () => {
       setDeleteLoading(false);
 
       setTimeout(() => {
-        router.refresh();
+        console.log("inside timeout deleteFile");
+        window.location.reload();
       }, 500);
     } catch (error) {
       toast("Error deleting file");
@@ -72,7 +73,8 @@ const Insert = () => {
           await writeFileAction(inputValue, host); // Assuming writeFileAction is a function that writes the file
           toast("File added successfully");
           setTimeout(() => {
-            router.refresh();
+            console.log("inside timeout add");
+            window.location.reload();
           }, 700);
         } catch (error) {
           toast("Error adding file");

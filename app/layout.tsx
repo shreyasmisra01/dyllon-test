@@ -1,10 +1,10 @@
 // app/layout.tsx
-
+"use client";
 import { Geist, Geist_Mono } from "next/font/google";
 import { readFileAction } from "./actions/serverAction";
 import "./globals.css";
-import { headers } from "next/headers";
 import { Toaster } from "react-hot-toast";
+import { useEffect, useState } from "react";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -16,25 +16,33 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export default async function RootLayout({
+export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const headersList = await headers();
-  const host = headersList.get("host");
-  const xForwardedHost = headersList.get("x-forwarded-host");
+  const [scriptData, setScriptData] = useState<string | false>();
+  useEffect(() => {
+    const getFileFromServer = async () => {
+      const resolvedHost = window.location.host;
+      const readResult = await readFileAction(resolvedHost || "");
 
-  // Use x-forwarded-host when behind a proxy.
-  const resolvedHost = xForwardedHost || host;
-  const readResult = await readFileAction(resolvedHost || "");
+      const script =
+        readResult?.success &&
+        typeof readResult?.data === "string" &&
+        readResult?.data;
+      console.log("what is script data??", script);
 
-  const scriptData =
-    readResult?.success &&
-    typeof readResult?.data === "string" &&
-    readResult?.data;
+      setScriptData(script);
+    };
 
-  console.log("what is script data??", scriptData);
+    getFileFromServer();
+  }, []);
+
+  useEffect(() => {
+    console.log("what is script data??", scriptData);
+  }, []);
+
   return (
     <html suppressHydrationWarning>
       <head>
@@ -46,6 +54,7 @@ export default async function RootLayout({
       >
         {/* Display Toaster for notifications */}
         <Toaster />
+        {scriptData}
         {children}
       </body>
     </html>

@@ -11,9 +11,13 @@ const SelectName = () => {
         id="divider"
         className="bg-black w-full border border-black mb-[-20px] mt-[-20px]"
       />
-      <select>
-        <option value="1">Option 1</option>
-        <option value="2">Option 2</option>
+      <select id="select-option1">
+        <option id="option1" value="1">
+          Option 1
+        </option>
+        <option id="option2" value="2">
+          Option 2
+        </option>
         {/* Missing accessible name for the select element */}
       </select>
     </>

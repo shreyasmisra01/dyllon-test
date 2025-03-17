@@ -33,14 +33,17 @@ import Bypass from "./components/Bypass";
 export default async function Page() {
   return (
     <div className="grid grid-rows-[20px_1fr_20px] text-black items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)] bg-white">
-      <nav>
+      <nav id="nav-homepage">
         <ul className="flex justify-center gap-4">
           <li className="text-2xl font-bold text-black hover:underline">
             <Link href="/insert">Insert javascript url</Link>
           </li>
         </ul>
       </nav>
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
+      <main
+        id="main-on-homepage"
+        className="flex flex-col gap-8 row-start-2 items-center sm:items-start"
+      >
         <Button />
         <ImageAlt />
         <DuplicateAriaId />

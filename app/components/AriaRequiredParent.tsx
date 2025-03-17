@@ -11,7 +11,9 @@ const AriaRequiredParent = () => {
         id="divider"
         className="bg-black w-full border border-black mb-[-20px] mt-[-20px]"
       />
-      <div role="option">{/* Missing required parent role for option */}</div>
+      <div id="id-on-role-option" role="option">
+        {/* Missing required parent role for option */}
+      </div>
     </>
   );
 };

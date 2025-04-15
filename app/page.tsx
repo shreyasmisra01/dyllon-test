@@ -29,6 +29,12 @@ import AriaValidAttrValue from "./components/AriaValidAttrValue";
 import SelectName from "./components/SelectName";
 import AriaValidAttr from "./components/AriaValidAttr";
 import Bypass from "./components/Bypass";
+import LandmarkOneMain from "./components/LandmarkOneMain";
+import LandmarkUnique from "./components/LandmarkUnique";
+import AriaConditionalAttr from "./components/AriaConditionalAttr";
+import ScopeAttrValid from "./components/ScopeAtrrValid";
+import AriaDeprecatedRole from "./components/AriaDeprecatedRole";
+import AriaText from "./components/AriaText";
 
 export default async function Page() {
   return (
@@ -71,6 +77,14 @@ export default async function Page() {
         <SelectName />
         <AriaValidAttr />
         <Bypass />
+
+        {/* Latest added */}
+        <LandmarkOneMain />
+        <LandmarkUnique />
+        <AriaConditionalAttr />
+        <ScopeAttrValid />
+        <AriaDeprecatedRole />
+        <AriaText />
       </main>
     </div>
   );

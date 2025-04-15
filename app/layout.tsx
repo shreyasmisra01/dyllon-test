@@ -41,10 +41,11 @@ export default function RootLayout({
 
   useEffect(() => {
     console.log("what is script data??", scriptData);
+    document.documentElement.setAttribute('xml:lang', 'fr');
   }, []);
 
   return (
-    <html suppressHydrationWarning>
+    <html  lang="en" suppressHydrationWarning>
       <head>
         {/* Conditionally add the script if data is available */}
         {scriptData && <script src={scriptData} async />}

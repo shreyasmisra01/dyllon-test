@@ -24,6 +24,16 @@ const LinksWithoutDiscernibleText = () => {
       <a id="link-2" href="#">
         Click here
       </a>
+
+      {/* Link with text, but no discernible text */}
+      <p>
+        For more info, click <a id="link-3" href="https://google.com">here</a>.
+      </p>
+
+      {/* Link with icon, but no id and no discernible text */}
+      <p>
+        Go to our homepage <a href="https://dyllon-test-new.dealopia.com/"><i className="fas fa-home"></i></a>
+      </p>
     </>
   );
 };

@@ -15,7 +15,7 @@ const LandmarkUnique = () => {
       <h1 id="links-title">Elements with no unique role or role/label/title</h1>
 
       {/* Elements with no unique role */}
-      <header id="violation-header-1">First header - Visible Content</header>
+      {/* <header id="violation-header-1">First header - Visible Content</header>
 <header id="violation-header-2">Second header - Visible Content</header>
 
 <form id="violation-form-aria-label-1" aria-label="form-label">
@@ -116,7 +116,16 @@ const LandmarkUnique = () => {
 </section>
 <section id="violation-section-2" aria-label="duplicate label for section">
   <p>Section content 2</p>
-</section>
+</section> */}
+
+    <main aria-label="main">Main 1 </main>
+    <main aria-label="main">Main 2</main>
+
+    <nav aria-label="duplicate nav">Nav 1</nav>
+    <nav aria-label="duplicate nav">Nav 2</nav>
+
+    <footer>Footer 1</footer>
+    <footer>Footer 2</footer>
 
     </>
   );

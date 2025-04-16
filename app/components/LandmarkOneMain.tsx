@@ -15,13 +15,31 @@ const LandmarkOneMain = () => {
       <h1 id="links-title">Elements with another main tags</h1>
 
       {/* Nested main tags */}
-      <main className="border border-black" role="main">
+      {/* <main className="border border-black" role="main">
         <p>Below is another main tag</p>
 
         <main className="border border-black" role="main">
             <p>Nested main tag</p>
         </main>
+      </main> */}
+
+    <div>
+      <header>
+        <h1>Page Title</h1>
+      </header>
+      <main>
+        <p>First main content area.</p>
       </main>
+      <aside>
+        <p>Sidebar content.</p>
+      </aside>
+      <main>
+        <p>Second main content area.</p>
+      </main>
+      <footer>
+        <p>© 2025 My Test Website</p>
+      </footer>
+    </div>
     </>
   );
 };

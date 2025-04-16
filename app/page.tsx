@@ -35,6 +35,7 @@ import AriaConditionalAttr from "./components/AriaConditionalAttr";
 import ScopeAttrValid from "./components/ScopeAtrrValid";
 import AriaDeprecatedRole from "./components/AriaDeprecatedRole";
 import AriaText from "./components/AriaText";
+import LandmarkNoDuplicateBanner from "./components/LandmarkNoDuplicateBanner";
 
 export default async function Page() {
   return (
@@ -85,6 +86,7 @@ export default async function Page() {
         <ScopeAttrValid />
         <AriaDeprecatedRole />
         <AriaText />
+        <LandmarkNoDuplicateBanner />
       </main>
     </div>
   );

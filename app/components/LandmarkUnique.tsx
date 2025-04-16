@@ -118,14 +118,37 @@ const LandmarkUnique = () => {
   <p>Section content 2</p>
 </section> */}
 
-    <main aria-label="main">Main 1 </main>
+    {/* <main aria-label="main">Main 1 </main>
     <main aria-label="main">Main 2</main>
 
     <nav aria-label="duplicate nav">Nav 1</nav>
     <nav aria-label="duplicate nav">Nav 2</nav>
 
     <footer>Footer 1</footer>
-    <footer>Footer 2</footer>
+    <footer>Footer 2</footer> */}
+
+    {/* Issue 1: Duplicate main landmarks with the same aria-label */}
+    <main aria-label="primary content">Main content section 1</main>
+      <main aria-label="primary content">Main content section 2</main>
+
+      <aside>
+        <nav aria-label="site navigation"> {/* Issue 2: Duplicate nav landmarks with the same aria-label */}
+          <ul>
+            <li><a href="https://google.com">Link 1</a></li>
+            <li><a href="https://google.com">Link 2</a></li>
+          </ul>
+        </nav>
+        <nav aria-label="site navigation">
+          <ul>
+            <li><a href="https://google.com">Another Link 1</a></li>
+            <li><a href="https://google.com">Another Link 2</a></li>
+          </ul>
+        </nav>
+      </aside>
+
+      {/* Issue 3: Duplicate footer landmarks (implicitly have the same role) */}
+      <footer>Footer section 1</footer>
+      <footer>Footer section 2</footer>
 
     </>
   );

@@ -21,7 +21,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const [scriptData, setScriptData] = useState<string | false>();
+  const [scriptData, setScriptData] = useState<string | null>();
   useEffect(() => {
     const getFileFromServer = async () => {
       const resolvedHost = window.location.host;
@@ -29,8 +29,9 @@ export default function RootLayout({
 
       const script =
         readResult?.success &&
-        typeof readResult?.data === "string" &&
-        readResult?.data;
+        typeof readResult?.data === "string" ?
+        readResult.data : null;
+        console.log("data: ", readResult?.data)
       console.log("what is script data??", script);
 
       setScriptData(script);

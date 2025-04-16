@@ -24,8 +24,7 @@ const Insert = () => {
 
       const fixedHost = host.replace(":", "_");
       console.log("fixed host??", fixedHost);
-      // const fetchedFiles = await getFilesForHost(fixedHost);
-      console.log("something")
+      const fetchedFiles = await getFilesForHost(fixedHost);
 
       setFiles(fetchedFiles);
     }

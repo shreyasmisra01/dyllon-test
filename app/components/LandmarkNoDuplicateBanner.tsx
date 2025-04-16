@@ -16,10 +16,10 @@ const LandmarkNoDuplicateBanner = () => {
 
       <div>
       {/* Issue 1: Two top-level <header> elements (both implicitly role="banner") */}
-      <header>
+      <header role="banner">
         <h1>Website Title</h1>
       </header>
-      <header>
+      <header role="banner">
         <p>Secondary header information</p>
       </header>
 

@@ -21,9 +21,9 @@ const ScopeAttrValid = () => {
       <caption>Product Comparison</caption>
       <thead>
         <tr>
-          <th>Feature</th>
-          <th>Product A</th>
-          <th>Product B</th>
+          <th scope="row">Feature</th>
+          <th scope="col">Product A</th>
+          <th scope="col">Product B</th>
         </tr>
       </thead>
       <tbody>
@@ -41,7 +41,7 @@ const ScopeAttrValid = () => {
         </tr>
         <tr>
           {/* Incorrect scope attribute - should be "col" for a header cell in the header row */}
-          <th scope="row">Rating</th>
+          <th scope="outside">Rating</th>
           <td>4.5 Stars</td>
           <td>4.2 Stars</td>
         </tr>

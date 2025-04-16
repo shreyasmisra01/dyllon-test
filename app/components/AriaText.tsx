@@ -19,7 +19,7 @@ const AriaText = () => {
         Learn more by visiting our <a href="https://example.com">website</a>.
     </div> */}
 
-<div>
+<div role="presentation">
       {/* Issue 1: Button with no text content and no accessible name */}
       <button></button>
 

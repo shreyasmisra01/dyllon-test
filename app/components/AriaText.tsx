@@ -19,11 +19,13 @@ const AriaText = () => {
         Learn more by visiting our <a href="https://example.com">website</a>.
     </div> */}
 
-<div role="presentation">
+    <div id="role-text" aria-readonly role="text">
       {/* Issue 1: Button with no text content and no accessible name */}
-      <button></button>
+      <p>Below is a button with no text and accessible name</p>
+      <button className="border border-black"></button>
 
       {/* Issue 2: Link with no text content and no accessible name */}
+      <p>Below is a anchor tag with no text and accessible name</p>
       <a href="#"></a>
 
       {/* Issue 3: Element with an aria-label but no visible text (potentially confusing) */}
@@ -35,7 +37,7 @@ const AriaText = () => {
       </div>
 
       {/* Issue 4: Input field with only an aria-label, but no visible label */}
-      <input type="text" aria-label="Search" id="search-input" />
+      <input type="text" aria-label="Search" id="search-input" className="border border-black" />
 
       {/* Issue 5: Element with aria-labelledby pointing to a non-existent ID */}
       <div aria-labelledby="non-existent-id">Content</div>

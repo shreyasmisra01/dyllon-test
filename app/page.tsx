@@ -47,10 +47,19 @@ export default async function Page() {
           </li>
         </ul>
       </nav>
+      
       <main
         id="main-on-homepage"
+        aria-label="homepage-main-section"
         className="flex flex-col gap-8 row-start-2 items-center sm:items-start"
       >
+        <header aria-label="header-section" className="border border-black">
+          <p>This is a header section of this website</p>
+        </header>
+
+        <header aria-label="header-section" className="border border-blue-300">
+          <p>This is header section is for triggering the Landmark No Duplicate Banner issue</p>
+        </header>
         <Button />
         <ImageAlt />
         <DuplicateAriaId />
@@ -79,14 +88,17 @@ export default async function Page() {
         <AriaValidAttr />
         <Bypass />
 
-        {/* Latest added */}
-        <LandmarkOneMain />
-        <LandmarkUnique />
-        <AriaConditionalAttr />
-        <ScopeAttrValid />
-        <AriaDeprecatedRole />
-        <AriaText />
-        <LandmarkNoDuplicateBanner />
+        <p>Another main tag on homepage. Nested inside a main tag</p>
+        <main id="main-on-homepage" aria-label="homepage-main-section" className="border border-blue-300 flex flex-col gap-8 row-start-2 items-center sm:items-start">
+          {/* Latest added */}
+          <LandmarkOneMain />
+          <LandmarkUnique />
+          <AriaConditionalAttr />
+          <ScopeAttrValid />
+          <AriaDeprecatedRole />
+          <AriaText />
+          <LandmarkNoDuplicateBanner />
+        </main>
       </main>
     </div>
   );

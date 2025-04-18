@@ -3,7 +3,7 @@
 import fs from "fs/promises";
 import path from "path";
 
-const BASE_PATH = process.env.BASEURL;
+// const BASE_PATH = process.env.BASEURL;
 export async function writeFileAction(data: string, filename: string) {
   try {
     // Sanitize filename to prevent directory traversal attacks
@@ -33,7 +33,8 @@ export async function writeFileAction(data: string, filename: string) {
 export async function readFileAction(filename: string) {
   try {
     const sanitizedFilename = filename.replace(/[^a-zA-Z0-9._-]/g, "_");
-    const filePath = path.join(BASE_PATH, `${sanitizedFilename}.txt`);
+    // const filePath = path.join(BASE_PATH, `${sanitizedFilename}.txt`);
+    const filePath = path.join(process.cwd(), "public", `${sanitizedFilename}.txt`);
 
     try {
       await fs.access(filePath, fs.constants.F_OK); // Check if the file exists

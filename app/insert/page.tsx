@@ -6,18 +6,19 @@ import {
   getFilesForHost,
   writeFileAction,
 } from "../actions/serverAction";
-import { useRouter } from "next/navigation";
+// import { useRouter } from "next/navigation";
 import Link from "next/link";
-import Image from "next/image";
+// import Image from "next/image";
 
-import script from "../assets/script.png";
+// import script from "../assets/script.png";
+// import script from "../../public/file.svg"
 import toast from "react-hot-toast";
 
 const Insert = () => {
   const [files, setFiles] = useState<string[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
   const [deleteLoading, setDeleteLoading] = useState<boolean>(false);
-  const router = useRouter();
+  // const router = useRouter();
   useEffect(() => {
     async function fetchFiles() {
       const host = window.location.host;
@@ -103,8 +104,9 @@ const Insert = () => {
               <p className="mb-10">
                 Instructions on how the add the url in the input:
               </p>
-              <Image
-                src={script}
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={"/script-latest.png"}
                 alt="script image alt"
                 className="shadow-lg border border-black mb-5"
               />
